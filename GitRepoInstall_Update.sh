@@ -38,3 +38,6 @@ cd /opt
 git clone https://github.com/AmatheraeWorld/juicy-potato ; cd juicy-potato
 git remote add upstream https://github.com/ohpe/juicy-potato ; git pull upstream master
 cd /opt
+git clone https://github.com/AmatheraeWorld/privilege-escalation-awesome-scripts-suite ; cd privilege-escalation-awesome-scripts-suite
+git remote add upstream https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite ; git pull upstream master
+cd /opt
