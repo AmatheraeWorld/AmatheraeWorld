@@ -13,7 +13,10 @@ echo "[9] ltrace [programa] --> para ver las llamadas que hace un programa, se u
 echo "[10] find \-name *config* --> Busca en el directorio en el que se esta todos los archivos de configuracion "
 echo "[11] find \-user [usuario] 2>/dev/null --> ver recursos de los que el usuario es propietario y elimina los errores "
 echo "[12] find \-perm -u=s 2>/dev/null --> Busca archivos SUID que se ejecutan con permisos de propietario " 
-echo -e "[13] w --> para ver que usuarios estan conectados ahora mismo al sistema  \n"
+echo "[13] Puertos internos abiertos proc/net/tcp "
+echo "[14] Grupos en los que estamos "ID" "
+echo "[15] Tipo de archivo file" archivo" "
+echo -e "[16] w --> para ver que usuarios estan conectados ahora mismo al sistema  \n"
 
 #if [ $1 -le "13" ]; then  #-le para menor o igual
 # opcion=$1 # seleccionamos por variable, no podemos dejar espacio
@@ -27,7 +30,7 @@ echo ""
 case "$opcion" in
 	1) crontab -l
 	;;
-	2) systemctl list-timers
+	2) watch -n 1 'systemctl list-timers' 
 	;;
 	3) old_process=$(ps -eo command)
 	
@@ -122,8 +125,19 @@ case "$opcion" in
 	 	  find $1 -perm -u=s 2>/dev/null # para hacerlo desde la Raiz poner /
 	 	 fi
 	 ;;
-	 13) w
+	 13) cat /proc/net/tcp | awk '{print $2}' | grep -v local | tr ': ' ' ' | awk 'NF{print $NF}'
 	 ;;
-	 		  
+	 14) id
+	 ;;
+	 15) if [ $# -ne 1 ]; then
+	 	 	 echo -e "Introduce archivo \n"
+	 	 	 read -r archivo
+	 	 	 file $archivo
+	 	 else
+	 	 	 file $1 # 1 es el primer parametro que le pasamos
+	 	 fi
+	 ;;
+	 16) watch -n 1 'w'
+	 ;;		  
 esac
 
