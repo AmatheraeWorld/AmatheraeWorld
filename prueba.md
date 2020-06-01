@@ -22,7 +22,7 @@ sudo updatedb
 ```
 nessus_connect admin:contraseña@127.0.0.1:8834
 ```
- 	`Conectar Nessus con la BD`
+ `Conectar Nessus con la BD`
 
 ```
 unshadow /etc/passwd /etc/shadow
