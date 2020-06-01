@@ -17,7 +17,7 @@ sudo updatedb
 ```
 sudo updatedb
 ```
-s	`Actualizar DBLocate`
+`Actualizar DBLocate`
 
 ```
 nessus_connect admin:contraseña@127.0.0.1:8834
