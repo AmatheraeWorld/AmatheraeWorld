@@ -14,76 +14,86 @@ you can also use this alias to send directly to proxy
 sudo updatedb
 ``` 
 ```
- sudo updatedb
- ```
 
- 	`Actualizar DBLocate`
+sudo updatedb```
+
+	`Actualizar DBLocate`
 ```
- nessus_connect admin:contraseña@127.0.0.1:8834```
- 	`Conectar Nessus con la BD`
+
+nessus_connect admin:contraseña@127.0.0.1:8834```
+
+	`Conectar Nessus con la BD`
 ```
- unshadow /etc/passwd /etc/shadow```
- 	`Fusionar las contraseñas en linux modernos`
+
+unshadow /etc/passwd /etc/shadow```
+
+	`Fusionar las contraseñas en linux modernos`
 ```
- /usr/share/windows-binaries/plin.exe```
- 	`SSH para windows`
+
+/usr/share/windows-binaries/plin.exe```
+
+	`SSH para windows`
 ```
- ```
- 	``
+
+ls -la```
+
+	`nos muestra el formato largo y los archivos ocultos`
 ```
- ls -la```
- 	`nos muestra el formato largo y los archivos ocultos`
+
+echo "flag del smtp" | xxd -r -ps ```
+
+	`convierte una cadena en hexadecimal de forma reversa `
 ```
- echo "flag del smtp" | xxd -r -ps ```
- 	`convierte una cadena en hexadecimal de forma reversa `
+
+/etc/init.d/postgresql start ```
+
+	`Iniciar BD PostgresQL`
 ```
- /etc/init.d/postgresql start ```
- 	`Iniciar BD PostgresQL`
+
+systemctl is-enabled nombredelservicio```
+
+	`Comprobar si un servicio esta habilitado en el arranque`
 ```
- systemctl is-enabled nombredelservicio```
- 	`Comprobar si un servicio esta habilitado en el arranque`
+systemctl enable nombredelservicio```
+	`Habilitiar servicio en el arranque`
 ```
- systemctl enable nombredelservicio```
- 	`Habilitiar servicio en el arranque`
+sudo -l```
+	`para ver lo que el usuario puede ejecutar`
 ```
- sudo -l```
- 	`para ver lo que el usuario puede ejecutar`
+TTL```
+	`segun el ttl se puede saber que sistema es 64 linux 128 windows 254 Solaris AIX`
 ```
- ```
- 	``
+nohup```
+	`independiza el proceso por si ascaso lo matan`
 ```
- TTL```
- 	`segun el ttl se puede saber que sistema es 64 linux 128 windows 254 Solaris AIX`
+id```
+	`para ver los grupos en los que estamos`
 ```
- nohup```
- 	`independiza el proceso por si ascaso lo matan`
+tail -f test.txt```
+	`nos muestra en tiempo real el archivo, por si cambia con un trabajo cron`
 ```
- id```
- 	`para ver los grupos en los que estamos`
+crontab -l```
+	`para ver las tareas programadas`
 ```
- tail -f test.txt```
- 	`nos muestra en tiempo real el archivo, por si cambia con un trabajo cron`
+cat /var/mail/usuario```
+	`para consultar cuando nos diga que tiene un mensaje`
 ```
- crontab -l```
- 	`para ver las tareas programadas`
+/root/.bashrc```
+	`para crear funciones como la de extracion de puertos o la ruta de go`
 ```
- cat /var/mail/usuario```
- 	`para consultar cuando nos diga que tiene un mensaje`
+file "archivo" ```
+	`nos dice que tipo de archivo es`
 ```
- /root/.bashrc```
- 	`para crear funciones como la de extracion de puertos o la ruta de go`
+ltrace```
+	`para ver las llamadas que hace un programa, se usa en reversing`
 ```
- file "archivo" ```
- 	`nos dice que tipo de archivo es`
+find \-user Jimmy 2>/dev/null```
+	`ver recursos de los que el usuario es propietario y elimina los errores`
 ```
- ltrace```
- 	`para ver las llamadas que hace un programa, se usa en reversing`
+systemctl list-timers```
+	`para ver tareas con temporizadores y cuanto les queda`
 ```
- find \-user Jimmy 2>/dev/null```
- 	`ver recursos de los que el usuario es propietario y elimina los errores`
-```
- systemctl list-timers```
- 	`para ver tareas con temporizadores y cuanto les queda`
-```
- apt-get intall kali-grant-root```
- 	`dpkg-reconfigure kali-grant-root`
+apt-get intall kali-grant-root```
+	`dpkg-reconfigure kali-grant-root`
+	
+
