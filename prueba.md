@@ -13,7 +13,6 @@ you can also use this alias to send directly to proxy
 ``` 
 sudo updatedb
 ``` 
-```
 
 ```
 sudo updatedb
@@ -124,4 +123,3 @@ systemctl list-timers
 apt-get intall kali-grant-root
 ```
 	`dpkg-reconfigure kali-grant-root`
-
