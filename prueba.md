@@ -1,3 +1,15 @@
+```
+git clone https://github.com/maurosoria/dirsearch.git
+cd dirsearch
+python3 dirsearch.py -u <URL> -e <EXTENSION>
+```
+
+you can also use this alias to send directly to proxy
+`python3 /path/to/dirsearch/dirsearch.py --http-proxy=localhost:8080`
+
+
+
+
 ``` sudo updatedb``` 
 ``` nessus_connect admin:contraseña@127.0.0.1:8834``` 
 ``` unshadow /etc/passwd /etc/shadow``` 
