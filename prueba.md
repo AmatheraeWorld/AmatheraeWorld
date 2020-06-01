@@ -15,85 +15,113 @@ sudo updatedb
 ``` 
 ```
 
-sudo updatedb```
-
+```
+sudo updatedb
+```
 	`Actualizar DBLocate`
+
 ```
-
-nessus_connect admin:contraseña@127.0.0.1:8834```
-
+nessus_connect admin:contraseña@127.0.0.1:8834
+```
 	`Conectar Nessus con la BD`
+
 ```
-
-unshadow /etc/passwd /etc/shadow```
-
+unshadow /etc/passwd /etc/shadow
+```
 	`Fusionar las contraseñas en linux modernos`
+
 ```
-
-/usr/share/windows-binaries/plin.exe```
-
+/usr/share/windows-binaries/plin.exe
+```
 	`SSH para windows`
+
 ```
-
-ls -la```
-
+ls -la
+```
 	`nos muestra el formato largo y los archivos ocultos`
+
 ```
-
-echo "flag del smtp" | xxd -r -ps ```
-
+echo "flag del smtp" | xxd -r -ps 
+```
 	`convierte una cadena en hexadecimal de forma reversa `
+
 ```
-
-/etc/init.d/postgresql start ```
-
+/etc/init.d/postgresql start 
+```
 	`Iniciar BD PostgresQL`
+
 ```
-
-systemctl is-enabled nombredelservicio```
-
+systemctl is-enabled nombredelservicio
+```
 	`Comprobar si un servicio esta habilitado en el arranque`
+
 ```
-systemctl enable nombredelservicio```
+systemctl enable nombredelservicio
+```
 	`Habilitiar servicio en el arranque`
+
 ```
-sudo -l```
+sudo -l
+```
 	`para ver lo que el usuario puede ejecutar`
+
 ```
-TTL```
+TTL
+```
 	`segun el ttl se puede saber que sistema es 64 linux 128 windows 254 Solaris AIX`
+
 ```
-nohup```
+nohup
+```
 	`independiza el proceso por si ascaso lo matan`
+
 ```
-id```
+id
+```
 	`para ver los grupos en los que estamos`
+
 ```
-tail -f test.txt```
+tail -f test.txt
+```
 	`nos muestra en tiempo real el archivo, por si cambia con un trabajo cron`
+
 ```
-crontab -l```
+crontab -l
+```
 	`para ver las tareas programadas`
+
 ```
-cat /var/mail/usuario```
+cat /var/mail/usuario
+```
 	`para consultar cuando nos diga que tiene un mensaje`
+
 ```
-/root/.bashrc```
+/root/.bashrc
+```
 	`para crear funciones como la de extracion de puertos o la ruta de go`
+
 ```
-file "archivo" ```
+file "archivo" 
+```
 	`nos dice que tipo de archivo es`
+
 ```
-ltrace```
+ltrace
+```
 	`para ver las llamadas que hace un programa, se usa en reversing`
+
 ```
-find \-user Jimmy 2>/dev/null```
+find \-user Jimmy 2>/dev/null
+```
 	`ver recursos de los que el usuario es propietario y elimina los errores`
+
 ```
-systemctl list-timers```
+systemctl list-timers
+```
 	`para ver tareas con temporizadores y cuanto les queda`
+
 ```
-apt-get intall kali-grant-root```
+apt-get intall kali-grant-root
+```
 	`dpkg-reconfigure kali-grant-root`
-	
 
