@@ -10,7 +10,9 @@ you can also use this alias to send directly to proxy
 
 
 
-``` sudo updatedb``` 
+``` 
+sudo updatedb
+``` 
 ``` nessus_connect admin:contraseña@127.0.0.1:8834``` 
 ``` unshadow /etc/passwd /etc/shadow``` 
 ``` /usr/share/windows-binaries/plin.exe``` 
