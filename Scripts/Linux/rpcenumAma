@@ -1,0 +1,60 @@
+#!/bin/bash
+# Maquina Resolute S4vitar
+#Colours
+greenColour="\e[0;32m\033[1m"
+endColour="\033[0m\e[0m"
+redColour="\e[0;31m\033[1m"
+blueColour="\e[0;34m\033[1m"
+yellowColour="\e[0;33m\033[1m"
+purpleColour="\e[0;35m\033[1m"
+turquoiseColour="\e[0;36m\033[1m"
+grayColour="\e[0;37m\033[1m"
+
+trap ctrl_c INT
+
+function ctrl_c(){
+	echo -e "\n${redColour}[!] ${endColour}${greyColour}Exiting...${endColour}"
+	tput cnorm
+	exit 0
+}
+
+ip_address=$1
+
+if [ ! -z "$ip_address" ]; then
+	tput civis
+
+	domain_admins_rid=$(rpcclient -U "" $ip_address -c "enumdomgroups" -N | grep "Domain Admins" | awk 'NF{print $NF}' | grep -oP '\[.*?\]' | tr -d '[]')
+	domain_admins_users=$(rpcclient -U "" $ip_address -c "querygroupmem $domain_admins_rid" -N | awk '{print $1}' | grep -oP '\[.*?\]' | tr -d '[]')
+
+	echo -e "\n${purpleColour}[*] ${endColour}${yellowColour} Domain Admins${endColour}"
+	for domain_admin_user in $domain_admins_users; do
+		echo -e "\n${grayColour}[i] ${endColour}${redColour}$domain_admin_user${endColour}\n"
+		rpclient -U "" $ip_address -c "queryuser $domain_admin_user" -N | grep -E 'User Name|Description' | sed 's/\t//'
+		done
+
+	echo -e "\n${purpleColour}[*] ${endColour}${yellowColour} Domain Users with description${endColour}\n"
+
+	declare -a users_no_description
+	for user_rid in $(rpcclient -U "" $ip_address -c "enumdomusers" -N | awk 'NF{print $NF}' | grep -oP '\[.*?\]' | tr -d '[]' ); do		
+		rpcclient -U "" $ip_address -c "queryuser $user_rid" -N > tmp_$user_rid
+
+		user_name=$(cat tmp_$user_rid | grep "User Name" | awk 'NF{print $NF}')
+		description_user_name=$(cat tmp_$user_rid | grep "Description" | cut -d ':' -f 2 | sed 's/\t//')
+
+		rm tmp_$user_rid 2>/dev/null
+
+		if [ -z "$description_user_name" ]; then
+			users_no_description+=($user_name)
+		else
+			echo -e "${yellowColour}$user_name:${endColour} $description_user_name${endColour}"
+		fi
+	done; tput cnorm
+
+	echo -e "\n${purpleColour}[*] ${endColour}${yellowColour} Domain Users without description${endColour}\n"
+	for user_no_description in "${user_no_description[@]}"; do
+		echo -ne "{$blueColour}$user_no_description${endColour} "
+	done; echo
+else
+	echo -e "\n${redColour}[!] ${endColour}${yellowColour} Usage:${endColour}${grayColour} rpcenum <ip_address>${endColour}\n"
+	exit 1
+fi
