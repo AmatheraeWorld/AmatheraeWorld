@@ -41,3 +41,5 @@ cd /opt
 git clone https://github.com/AmatheraeWorld/privilege-escalation-awesome-scripts-suite ; cd privilege-escalation-awesome-scripts-suite
 git remote add upstream https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite ; git pull upstream master
 cd /opt
+git clone https://github.com/AmatheraeWorld/furious ; cd furious
+git remote add upstream https://github.com/liamg/furious ; git pull upstream master
