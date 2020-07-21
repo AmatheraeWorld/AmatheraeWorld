@@ -43,3 +43,10 @@ git remote add upstream https://github.com/carlospolop/privilege-escalation-awes
 cd /opt
 git clone https://github.com/AmatheraeWorld/furious ; cd furious
 git remote add upstream https://github.com/liamg/furious ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/windows-kernel-exploits ; cd windows-kernel-exploits
+git remote add upstream https://github.com/SecWiki/windows-kernel-exploits ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/linux-kernel-exploits ; cd linux-kernel-exploits
+git remote add upstream https://github.com/SecWiki/linux-kernel-exploits ; git pull upstream master
+
