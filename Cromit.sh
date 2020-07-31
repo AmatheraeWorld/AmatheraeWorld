@@ -1,5 +1,5 @@
 #!/bin/bash
-# version 1.7 fecha 28/7/2020
+# version 1.8 fecha 28/7/2020
 greenColour="\e[38;5;82m\033[1m"
 endColour="\033[0m\e[0m"
 redColour="\e[0;31m\033[1m"
@@ -49,7 +49,7 @@ echo -e "                     ../(##%/(@(&%(#/&%%%%%%%%%/.                    "
 echo -e "                            **    #&&@&&&&&&&&&(,                    " 
 echo -e "                                        ....                         "
 echo -e "                                                                     "
-echo -e "${purpleColour}==================(${endColour}${greenColour} Cromit v1.7 28/7/2020 ${endColour}${purpleColour})==========================${endColour}"
+echo -e "${purpleColour}==================(${endColour}${greenColour} Cromit v1.8 28/7/2020 ${endColour}${purpleColour})==========================${endColour}"
 echo 
 echo -e " Escoge opcion\n\n "
 echo -e "${purpleColour}[1]${endColour}${greenColour} crontab -l${endColour} --> Para ver las tareas programadas "
