@@ -1,5 +1,5 @@
 #!/bin/bash
-# version 1.8 fecha 28/7/2020
+# version 1.8 fecha 26/8/2020
 greenColour="\e[38;5;82m\033[1m"
 endColour="\033[0m\e[0m"
 redColour="\e[0;31m\033[1m"
@@ -49,7 +49,7 @@ echo -e "                     ../(##%/(@(&%(#/&%%%%%%%%%/.                    "
 echo -e "                            **    #&&@&&&&&&&&&(,                    " 
 echo -e "                                        ....                         "
 echo -e "                                                                     "
-echo -e "${purpleColour}==================(${endColour}${greenColour} Cromit v1.8 28/7/2020 ${endColour}${purpleColour})==========================${endColour}"
+echo -e "${purpleColour}==================(${endColour}${greenColour} Cromit v1.8 26/8/2020 ${endColour}${purpleColour})==========================${endColour}"
 echo 
 echo -e " Escoge opcion\n\n "
 echo -e "${purpleColour}[1]${endColour}${greenColour} crontab -l${endColour} --> Para ver las tareas programadas "
@@ -182,6 +182,12 @@ case "$opcion" in
 						echo
 		 		 		find ./ -name "*conf*" | grep -R -i -E "user|usuario|pass|contraseña|root|admin|creden" ./ 
 		 		 	fi
+		 echo -e "\n ¿Quieres buscar usuarios y contraseñas en todos los archivos de configuracion desde la raiz? [S/N] \n"
+		 read fichero
+		 		    if [ $fichero == "S" ]; then
+		 		    	echo
+		 		    	find ./ -name "*conf*" | grep -R -i -E "user|usuario|pass|contraseña|root|admin|creden" / 2>/dev/null
+		 		    fi
 	    else
 		    find $1 -name "*conf*" # la ruta que le pasamos
 		    echo -e "\n ¿Quieres buscar usuarios y contraseñas en los archivos de configuracion? [S/N] \n"
@@ -195,6 +201,12 @@ case "$opcion" in
 		 	   if [ $fichero == "S" ]; then
 		 	 		echo
 		      	    find $1 -name "*conf*" | grep -R -i -E "user|usuario|pass|contraseña|root|admin|creden" $1
+		 	   fi
+		 	echo -e "\n ¿Quieres buscar usuarios y contraseñas en todos los archivos de configuracion desde la raiz? [S/N] \n"
+		    read fichero
+		 	   if [ $fichero == "S" ]; then
+		 	    	echo
+		 	    	find ./ -name "*conf*" | grep -R -i -E "user|usuario|pass|contraseña|root|admin|creden" / 2>/dev/null
 		 	   fi
 	   fi
 	;;
@@ -212,6 +224,12 @@ case "$opcion" in
 					echo
 			 		find ./ -name "*back*" | grep -R -i -E "user|usuario|pass|contraseña|root|admin|creden" ./ 
 			 	fi
+			 echo -e "\n ¿Quieres buscar usuarios y contraseñas en todos los archivos de backup desde la raiz? [S/N] \n"
+			 read fichero
+			    if [ $fichero == "S" ]; then
+			        echo
+			 	    find ./ -name "*back*" | grep -R -i -E "user|usuario|pass|contraseña|root|admin|creden" / 2>/dev/null
+			    fi
 		else
 			 find $1 -name "*back*" # la ruta que le pasamos
 			 echo -e "\n ¿Quieres buscar usuarios y contraseñas en los archivos de backup? [S/N] \n"
@@ -226,6 +244,12 @@ case "$opcion" in
 			 		echo
 			      	find $1 -name "*back*" | grep -R -i -E "user|usuario|pass|contraseña|root|admin|creden" $1
 			 	fi
+			 echo -e "\n ¿Quieres buscar usuarios y contraseñas en todos los archivos de backup desde la raiz? [S/N] \n"
+			 read fichero
+			    if [ $fichero == "S" ]; then
+			        echo
+			 	    find ./ -name "*back*" | grep -R -i -E "user|usuario|pass|contraseña|root|admin|creden" / 2>/dev/null
+			    fi
        fi
 	;;
 	13) if [ $# -ne 1 ]; then
@@ -283,7 +307,7 @@ case "$opcion" in
 	 ;;
 	 16) cat /proc/net/tcp | awk '{print $2}' | grep -v local | tr ': ' ' ' | awk 'NF{print $NF}'
 	 	 echo
-	 	 for hexadecimal in $(cat /proc/net/tcp | awk '{print $2}' | grep -v local | tr ': ' ' ' | awk 'NF{print $NF}'); do
+	 	 for hexadecimal in $(cat /proc/net/tcp | awk '{print $2}' | grep -v local | tr ': ' ' ' | awk 'NF{print $NF}'| sort -u); do
 	 	 printf "El puerto $hexadecimal es el puerto: %d \n" $((16#$hexadecimal))
 	 	 done;
 	 ;;
@@ -363,8 +387,8 @@ case "$opcion" in
 	 	  fi
 
           echo -e "${purpleColour}====================(${endColour}${greenColour} Escritura en Passwd ${endColour}${purpleColour})===========================================${endColour}"
-	 	  find /etc/passwd -writable | xargs ls -l
-	 	  if [ $? == 0 ]; then
+	 	  find /etc/passwd -writable -exec ls -la {} + 
+	 	  if [ -w "/etc/passwd" ]; then
 	 	  	 echo -e "${greenColour}${blink}[+]${endColour} SI "
 	 	  	 echo -e "${greenColour}${blink}[+]${endColour} ${yellowColour}openssl passwd [contraseña]${endColour} se puede sustituir ${redColour}root:x:0${endColour} sustituir la x por el hash y despues al hacer [su root] y poner la contraseña"
 	 	  else
@@ -381,10 +405,13 @@ case "$opcion" in
 	 	  fi
 	 	  
 	 	  echo -e "${purpleColour}====================(${endColour}${greenColour} ¿Chkrootkit? ${endColour}${purpleColour})==================================================${endColour}"
-	 	  find / -type d -name "report" 2>/dev/null
+	 	#  find / -type d -name "report" 2>/dev/null
+		  find /report -type d 2>/dev/null
 	 	  if [ $? == 0 ]; then
 	 	  	 echo -e "${greenColour}${blink}[+]${endColour} SI "
 	 	  	 echo -e "${greenColour}${blink}[+]${endColour} Si hay una carpeta report es muy ${yellowColour}posible que se encuentre chkrootkit instalado${endColour} y si se encuentra en la version ${redColour}< 0.50${endColour} es vulnerable a priv esc ${yellowColour}Crear un archivo en /tmp llamado update y se ejecutara con root ${endColour}"
+			 echo -e
+			 find /report 2>/dev/null
 	 	  else
 	 	  	 echo -e "${redColour}${blink}[-]${endColour} NO"
 	 	  fi
@@ -392,7 +419,7 @@ case "$opcion" in
 	 	  echo -e "${purpleColour}====================(${endColour}${greenColour} Puertos Internos Abiertos ${endColour}${purpleColour})=====================================${endColour}"
 	 	  cat /proc/net/tcp | awk '{print $2}' | grep -v local | tr ': ' ' ' | awk 'NF{print $NF}'
 	 	  echo
-	 	  for hexadecimal in $(cat /proc/net/tcp | awk '{print $2}' | grep -v local | tr ': ' ' ' | awk 'NF{print $NF}'); do
+	 	  for hexadecimal in $(cat /proc/net/tcp | awk '{print $2}' | grep -v local | tr ': ' ' ' | awk 'NF{print $NF}' | sort -u); do
 	 	  printf "El puerto $hexadecimal es el puerto: ${yellowColour}%d${endColour} \n" $((16#$hexadecimal))
 	 	  done;
 
