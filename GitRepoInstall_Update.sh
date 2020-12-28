@@ -55,3 +55,6 @@ git remote add upstream https://github.com/SecuraBV/CVE-2020-1472 ; git pull ups
 cd /opt
 git clone https://github.com/AmatheraeWorld/CVE-2020-1473 ; cd CVE-2020-1473
 git remote add upstream https://github.com/dirkjanm/CVE-2020-1472 ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/RoguePotato ; cd RoguePotato
+git remote add upstream https://github.com/AmatheraeWorld/RoguePotato ; git pull upstream master
