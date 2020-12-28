@@ -49,4 +49,6 @@ git remote add upstream https://github.com/SecWiki/windows-kernel-exploits ; git
 cd /opt
 git clone https://github.com/AmatheraeWorld/linux-kernel-exploits ; cd linux-kernel-exploits
 git remote add upstream https://github.com/SecWiki/linux-kernel-exploits ; git pull upstream master
-
+cd /opt
+git clone https://github.com/AmatheraeWorld/CVE-2020-1472 ; cd CVE-2020-1472
+git remote add upstream https://github.com/SecuraBV/CVE-2020-1472 ; git pull upstream master
