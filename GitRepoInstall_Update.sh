@@ -61,3 +61,6 @@ git remote add upstream https://github.com/antonioCoco/RoguePotato ; git pull up
 cd /opt
 git clone https://github.com/AmatheraeWorld/PayloadsAllTheThings ; cd PayloadsAllTheThings
 git remote add upstream https://github.com/AmatheraeWorld/PayloadsAllTheThings ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/legion ; cd legion
+git remote add upstream https://github.com/carlospolop/legion ; git pull upstream master
