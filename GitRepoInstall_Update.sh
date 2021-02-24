@@ -58,3 +58,6 @@ git remote add upstream https://github.com/dirkjanm/CVE-2020-1472 ; git pull ups
 cd /opt
 git clone https://github.com/AmatheraeWorld/RoguePotato ; cd RoguePotato
 git remote add upstream https://github.com/antonioCoco/RoguePotato ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/PayloadsAllTheThings ; cd PayloadsAllTheThings
+git remote add upstream https://github.com/AmatheraeWorld/PayloadsAllTheThings ; git pull upstream master
