@@ -64,3 +64,12 @@ git remote add upstream https://github.com/AmatheraeWorld/PayloadsAllTheThings ;
 cd /opt
 git clone https://github.com/AmatheraeWorld/legion ; cd legion
 git remote add upstream https://github.com/carlospolop/legion ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/pspy ; cd pspy
+git remote add upstream https://github.com/DominicBreuker/pspy ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/wesng ; cd wesng
+git remote add upstream https://github.com/bitsadmin/wesng ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/AutoRecon ; cd AutoRecon
+git remote add upstream https://github.com/Tib3rius/AutoRecon ; git pull upstream master
