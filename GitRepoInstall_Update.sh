@@ -73,3 +73,6 @@ git remote add upstream https://github.com/bitsadmin/wesng ; git pull upstream m
 cd /opt
 git clone https://github.com/AmatheraeWorld/AutoRecon ; cd AutoRecon
 git remote add upstream https://github.com/Tib3rius/AutoRecon ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/nmapAutomator ; cd nmapAutomator
+git remote add upstream https://github.com/21y4d/nmapAutomator ; git pull upstream master
