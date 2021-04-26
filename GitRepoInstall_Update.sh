@@ -76,3 +76,9 @@ git remote add upstream https://github.com/Tib3rius/AutoRecon ; git pull upstrea
 cd /opt
 git clone https://github.com/AmatheraeWorld/nmapAutomator ; cd nmapAutomator
 git remote add upstream https://github.com/21y4d/nmapAutomator ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/sweetuu ; cd sweetuu
+git remote add upstream https://github.com/cspshivam/sweetuu ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/SUID3NUM ; cd SUID3NUM
+git remote add upstream https://github.com/Anon-Exploiter/SUID3NUM ; git pull upstream master
