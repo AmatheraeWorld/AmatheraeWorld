@@ -82,3 +82,6 @@ git remote add upstream https://github.com/cspshivam/sweetuu ; git pull upstream
 cd /opt
 git clone https://github.com/AmatheraeWorld/SUID3NUM ; cd SUID3NUM
 git remote add upstream https://github.com/Anon-Exploiter/SUID3NUM ; git pull upstream master
+cd /opt
+git clone https://github.com/AmatheraeWorld/chisel ; cd chisel
+git remote add upstream https://github.com/jpillora/chisel ; git pull upstream master
